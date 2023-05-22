@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit" />
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script>
+function validate() {
+    var username = document.querySelector("#username").value;
+    var password = document.querySelector("#password").value;
+    var checkpassword = document.querySelector("#checkpassword").value;
+    var phone = document.querySelector("#phone").value;
+    var email = document.querySelector("#email").value;
+    var year = document.querySelector("#year").value;
+    var month = document.querySelector("#month").value;
+    var day = document.querySelector("#day").value;
+  
+    if (username.trim() == "" || password.trim() == "" || checkpassword.trim() == "" || phone.trim() == "" || email.trim() == "" || year.trim() == "" || month.trim() == "" || day.trim() == "") {
+      alert("注册信息不能为空");
+      return false;
+    }
+  
+    // 验证密码一致
+    if (password != checkpassword) {
+      alert("密码不一致，请重新检查");
+      return false;
+    }
+  
+    // 验证手机号
+    if (phone.length != 11) {
+      alert("请输入11位手机号");
+      return false;
+    }
+  
+    // 验证邮箱
+    var email_reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (!email_reg.test(email)) {
+      alert("邮箱格式不正确");
+      return false;
+    }
+  
+    // 提示注册成功，并跳转到登录页面
+        alert("注册成功！");
+    // 添加注册信息到本地存储
+
+    var info = {
+      "username": username,
+      "password": password,
+      "phone": phone,
+      "email": email,
+      "year": year,
+      "month": month,
+      "day": day,
+    }
+    // 将注册信息存储到本地存储中
+    localStorage.setItem("info", JSON.stringify(info));
+
+
+
+  }
+</script>
+
+
+
+<script type="text/javascript">
+
+    function displayInfo() {
+        // 获取各项信息
+        var username = document.querySelector("#username").value;
+        var password = document.querySelector("#password").value;
+        var checkpassword = document.querySelector("#checkpassword").value;
+        var phone = document.querySelector("#phone").value;
+        var email = document.querySelector("#email").value;
+        var year = document.querySelector("#year").value;
+        var month = document.querySelector("#month").value;
+        var day = document.querySelector("#day").value;
+
+        // 在新页面展示填入的信息
+        var info = "<h1>您填写的注册表单如下：</h1>";
+        info += "<p>姓名：" + username + "</p>";
+        info += "<p>密码：" + password + "</p>";
+        info += "<p>确认密码：" + checkpassword + "</p>";
+        info += "<p>手机号：" + phone + "</p>";
+        info += "<p>邮箱：" + email + "</p>";
+        info += "<p>出生日期：" + year + "年" + month + "月" + day + "日" + "</p>";
+
+        var gender = document.getElementsByName("gender");
+        for(var i=0; i<gender.length; i++) {
+            if (gender[i].checked) {
+                info += "<p>性别：" + gender[i].value + "</p>";
+            }
+        }
+
+        var hobby = document.getElementsByName("hobby");
+        var hobbys = "";
+        for(var i=0; i<hobby.length; i++) {
+            if (hobby[i].checked) {
+                hobbys = hobbys + hobby[i].value + " ";
+            }
+        }
+        info += "<p>爱好：" + hobbys + "</p>";
+
+        var say = document.getElementsByName("say")[0].value;
+        info += "<p>留言：" + say + "</p>";
+
+        var infoPage = window.open("", "_blank");
+        infoPage.document.write(info);
+        infoPage.focus();
+    }
+</script>
+
+<style>
+    .select {
+        display: flex;
+    }
+
+    .select label {
+        margin-right: 100px;
+    }
+    .b {
+        display: flex;
+
+    }
+    .b button{
+        margin-right: 50px;
+    }
+    .b year{
+        width: 50%;
+        font-size: 1px;
+        padding: 1px;
+        border: 3px solid #ccc;
+    }
+</style>
+</head>
+<body>
+
+<!--头部-->
+<div class="header">
+
+<div class="main">
+
+    <!--logo-->
+    <div class="logo">
+        <a href="index.html"><img src="image/logo.png"/></a>
+    </div>
+
+    <!--导航-->
+    <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="jianjie.html">简介</a></li>
+        <li><a href="jingdian.html">景点</a></li>
+        <li><a href="meishi.html">美食</a></li>
+        <li><a href="zhuce.html" class="active">注册</a></li>
+        <li><a href="denglu.html">登录</a></li>
+		<li><a href="../个人介绍/index.html">个人简介</a></li>
+    </ul>
+
+</div>
+</div>
+
+<!--内容居中-->
+<div class="main">
+
+<!--表单-->
+<div class="form">
+
+    <h1>注册</h1>
+
+    <div class="box1">
+
+        <div class="info">
+            <a href="denglu.html">已有账号？去登录</a>
+        </div>
+
+
+        <form>
+            <div class="form-item">
+                <span class="label">用户名: </span>
+                <input type="text" id="username" placeholder="用户名" />
+            </div>
+
+            <div class="form-item">
+                <span class="label">密码: </span>
+                <input type="password" id="password" placeholder="密码" />
+            </div>
+
+            <div class="form-item">
+                <span class="label">确认密码: </span>
+                <input type="password" id="checkpassword" placeholder="确认密码" />
+            </div>
+
+            <div class="form-item">
+                <span class="label">手机号: </span>
+                <input type="text" id="phone" placeholder="手机号" />
+            </div>
+
+            <div class="form-item">
+                <span class="label">邮箱: </span>
+                <input type="text" id="email" placeholder="邮箱" />
+            </div>
+            <div class="form-item">
+                <span class="label">出生日期: </span>
+                <div class="b">
+                    <input type="text" id="year" name="year" placeholder="2000">年&nbsp;-&nbsp;
+                    <select id="month" name="month" style="width:500px; border: 1px solid #ccc;">
+                        <option value="01" selected>1月</option>
+                        <option value="02">2月</option>
+                        <option value="03">3月</option>
+                        <!-- 在这里添加更多的选项 -->
+                    </select>&nbsp;-&nbsp;
+                    <input type="text" id="day" name="day" placeholder="1">日
+
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="select">
+                    性别：
+                    男<label><input type="radio" name="gender" value="男" checked></label>
+                    女<label><input type="radio" name="gender" value="女"></label>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="select">
+                    爱好：
+                    唱<label><input type="checkbox" name="hobby" value="唱" checked></label>
+                    跳<label><input type="checkbox" name="hobby" value="跳"></label>
+                    rap<label><input type="checkbox" name="hobby" value="rap"></label>
+                    篮球<label><input type="checkbox" name="hobby" value="篮球"></label>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <span class="label">自我介绍: </span>
+            </div>
+            <textarea name="say" cols="100" rows="10" style="border: 2px solid #ccc;">
+1、向阳花木易为春，听说你爱蔡徐坤。
+
+2、千军万马是ikun，ikun永远爱坤坤。
+
+3、待我ikun更强大，定帮坤哥赢天下。
+
+4、两耳不闻窗外事，一心只为蔡徐坤。
+
+5、追梦少年不失眠，未来可期蔡徐坤。
+
+6、向阳花木每逢春，ikun一直爱坤坤。
+
+7、落红飞雪漫纷纷，心头只有蔡徐坤。
+
+8、披荆斩棘，护坤为王。
+							</textarea>
+							<br>
+							<br>
+<div class="b">
+<button onclick="validate()" class="btn" id="tijiao ">提交</button>
+<button type="reset">重置</button>
+<button onclick="displayInfo()" class="btn">查看填写信息</button>
+</div>
+
+
+					</form>
+
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+
+		<!--底部信息-->
+		<div class="footer">
+			<p>@See You!</p>
+		</div>
+	</body>
+</html>
+

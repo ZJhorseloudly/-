@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		
+		
+		<!--头部-->
+		<div class="header">
+			
+			<div class="main">
+				
+				<!--logo-->
+				<div class="logo">
+					<a href="index.html"><img src="image/logo.png"/></a>
+				</div>
+				
+				<!--导航-->
+				<ul class="nav">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="jianjie.html">简介</a></li>
+					<li><a href="jingdian.html">景点</a></li>
+					<li><a href="meishi.html">美食</a></li>
+					<li><a href="zhuce.html" class="active">注册</a></li>
+					<li><a href="denglu.html">登录</a></li>
+					<li><a href="../个人介绍/index.html">个人简介</a></li>
+
+				</ul>
+				
+			</div>
+			
+		</div>
+		
+		<!--内容居中-->
+		<div class="main">
+			
+			<!--表单-->
+			<div class="form">
+				
+				<h1>登录</h1>
+				
+				<div class="box1">
+					
+					<div class="info">
+						<a href="zhuce.html">没有账号？去注册</a>
+					</div>
+					
+					
+					<div class="form-item">
+						<span class="label">用户名: </span>
+						<input type="text" id="username" placeholder="用户名" />
+					</div>
+					
+					<div class="form-item">
+						<span class="label">密码: </span>
+						<input type="password" id="password" placeholder="密码" />
+					</div>
+					
+					
+					<button id="btn_submit">登录</button>
+					
+				</div>
+				
+				
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		<!--底部信息-->
+		<div class="footer">
+			<p>@See You!</p>
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			
+			// 表单验证
+			document.getElementById('btn_submit').onclick = function() {
+			
+				var username = document.querySelector("#username").value;
+				var password = document.querySelector("#password").value;
+	
+				// 验证非空
+				if(username == "" || password == "") {
+					alert("登录信息不能为空");
+					return false;
+				}
+	
+				alert("登录成功");
+				location.href = "index.html";
+				
+			};
+		</script>
+		
+	</body>
+</html>

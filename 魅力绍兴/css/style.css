@@ -1,0 +1,370 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: #000;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: #eee;
+}
+
+img {
+  width: 100%;
+}
+.main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #282828;
+}
+.header .main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.header .logo {
+  width: 50px;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+.header .written {
+  padding-right: 0%;
+  padding-top:0%;
+  padding-bottom: 0%;
+  padding-left: 1%;
+  font-weight: bold; 
+  width: 100px;
+}
+
+.header .p1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.header .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.header .nav li {
+  margin: 0 30px ;
+}
+.header .nav li a {
+  display: inline-block;
+  padding-bottom: 6px;
+  color: #fff;
+}
+
+.header .nav li a:hover {
+  color: orangered;
+}
+
+.header .nav li a:active {
+  border-bottom: 2px solid red;
+}
+/* 轮播图区域大小 */
+.swiper-container {
+  width: 100%;
+  height: 700px;
+}
+
+.swiper-container .swiper-slide {
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+/* .swiper-container 是轮播图的容器元素，.swiper-slide 是每一个轮播项的元素。
+
+包括相对定位、字体大小、字体颜色和盒子模型的边框模型。
+
+此外，文本居中对齐也被设置在每一个轮播项上。-webkit-box-sizing: border-box 和
+box-sizing: border-box 两个属性可以使元素的计算方式从默认的 content-box 模型转变为 border-box 模型，
+这样可以更好地控制元素的尺寸和边距。 */
+
+/* 轮播图图片样式 */
+.swiper-container .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 60px !important;
+  height: 6px !important;
+  background-color: #b8b2b2 !important;
+  border-radius: 0;
+  opacity: 1;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #fff !important;
+}
+
+.bigtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+.bigtitle .icon {
+  width: 50px;
+}
+.bigtitle h2 {
+  margin-left: 10px;
+  font-size: 32px;
+}
+.meishi {
+  margin-top: 50px;
+}
+.meishi .list1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+.meishi .list1 li {
+  width: 32%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.meishi .list1 li .image {
+  overflow: hidden;
+  height: 280px;
+}
+.meishi .list1 li .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.5s;
+}
+.meishi .list1 li .image img:hover {
+  transform: scale(1.1);
+}
+.meishi .list1 li .text {
+  background-color: #fff;
+  padding: 20px;
+}
+.meishi .list1 li .text .title a {
+  font-size: 22px;
+  line-height: 2;
+  font-weight: bold;
+}
+.meishi .list1 li .text .title a:hover {
+  color: orangered;
+}
+.meishi .list1 li .text .desc {
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 100;
+  -webkit-box-orient: vertical;
+}
+.more {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.more a {
+  display: inline-block;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  background-color: orangered;
+  color: #fff;
+  text-align: center;
+}
+.more a:hover {
+  background-color: rgba(255, 69, 0, 0.7);
+}
+.jingdian {
+  margin-top: 50px;
+}
+.jingdian .list1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+.jingdian .list1 li {
+  margin-bottom: 50px;
+  display: flex;
+}
+.jingdian .list1 li .image {
+  width: 400px;
+  overflow: hidden;
+}
+.jingdian .list1 li .image img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: 0.5s;
+}
+
+.jingdian .list1 li .text {
+  flex: 1;
+  background-color: #fff;
+  padding: 50px;
+}
+.jingdian .list1 li .text .title a {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.jingdian .list1 li .text .desc {
+  color: #666;
+  margin-top: 20px;
+  line-height: 2;
+}
+.footer {
+  padding: 50px 0;
+  background-color: #282828;
+}
+.footer p {
+  color: #fff;
+  line-height: 2;
+  text-align: center;
+}
+.jianjie {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+.jianjie .flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+.jianjie .flexbox .image {
+  width: 48%;
+}
+.jianjie .flexbox .text {
+  width: 48%;
+}
+.jianjie p {
+  line-height: 1.5;
+  text-indent: 2em;
+  padding-bottom: 30px;
+}
+.jianjie h2 {
+  margin-bottom: 20px;
+}
+.jianjie h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.jianjie table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.jianjie table th,
+.jianjie table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.jianjie table td {
+  color: #666;
+}
+.jianjie table tr:nth-child(n+2):hover {
+  background-color: #eee;
+}
+.page {
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+  
+}
+.page ul {
+  display: flex;
+}
+/* nline-blocki */
+.page ul li {
+  display: flex;
+}
+.page ul li a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+.page ul li a.active {
+  border: 1px solid orangered;
+  background-color: orangered;
+  color: #fff;
+  cursor: default;
+}
+.page ul li a:hover {
+  border: 1px solid orangered;
+  background-color: orangered;
+  color: #fff;
+}
+.form {
+  padding-bottom: 50px;
+  background-color: #fff;
+  min-height: 80vh;
+}
+.form h1 {
+  padding: 50px;
+  text-align: center;
+}
+.form .box1 {
+  width: 600px;
+  margin: 0 auto;
+}
+.form .box1 .info {
+  text-align: center;
+}
+.form .box1 .info a {
+  color: orangered;
+  text-decoration: underline;
+}
+.form .box1 input {
+  box-sizing: border-box;
+}
+.form .box1 .form-item {
+  margin-bottom: 30px;
+}
+.form .box1 span {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.form .box1 input {
+  width: 100%;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+.form .box1 button {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #000;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+.form .box1 button:hover {
+  background-color: #333;
+}
